@@ -25,12 +25,12 @@ class PaymentActivity : AppCompatActivity() {
 
     private fun initMidtransSdk() {
         val sdkUIFlowBuilder: SdkUIFlowBuilder = SdkUIFlowBuilder.init()
-            .setClientKey("SB-Mid-client-qk4Ar-kOiBOHaqxl") // client_key is mandatory
+            .setClientKey("MASUKKAN CLIENT KEY MIDTRANS ANDA DISINI") // client_key is mandatory
             .setContext(this) // context is mandatory
             .setTransactionFinishedCallback {
                 // Handle finished transaction here.
             } // set transaction finish callback (sdk callback)
-            .setMerchantBaseUrl("http://192.168.18.22/mazbaystore/public/") //set merchant url
+            .setMerchantBaseUrl("MASUKKAN URL SERVER ANDA DISINI") //set merchant url, contoh "http://ip-address-anda/nama-folder-ci/public/"
             .setUIkitCustomSetting(uiKitCustomSetting())
             .enableLog(true) // enable sdk log
             .setColorTheme(CustomColorTheme("#FFE51255", "#B61548", "#FFE51255")) // will replace theme on snap theme on MAP
@@ -40,7 +40,7 @@ class PaymentActivity : AppCompatActivity() {
 
     private fun initTransactionRequest(price: Double): TransactionRequest {
         // Create new Transaction Request
-        val transactionRequestNew = TransactionRequest("mazbay-store-"+System.currentTimeMillis().toString() + "", price)
+        val transactionRequestNew = TransactionRequest("toko-kamu-"+System.currentTimeMillis().toString() + "", price)
 //        transactionRequestNew.itemDetails = initItemDetails(price)
 //        transactionRequestNew.customerDetails = initCustomerDetails()
         return transactionRequestNew
